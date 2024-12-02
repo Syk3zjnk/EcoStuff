@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos Gerais */
+body {
+    background-color: rgb(245, 245, 220);
+    color: rgb(34, 34, 34);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 15px;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header #title {
+    display: flex;
+    align-items: center;
+}
+
+header .eco-text {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: rgb(127, 166, 83);
+}
+
+.eco-ig a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.eco-ig a:hover {
+    color: rgb(127, 166, 83);
+}
+
+/* Container Principal */
+.main-container {
+    margin: 0 auto;
+    width: calc(100% - 100px);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 120px; /* Ajustado para o cabeçalho fixo */
+    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.main-container h2 {
+    font-size: 2.5rem;
+    color: rgb(34, 34, 34);
+    margin-top: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 900px;
+    margin-left: 20px;
+}
+
+/* Seção de Serviços */
+.services-section {
+    width: 100%;
+    padding: 80px 0; /* Aumentado o padding para mover a seção mais para baixo */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.service-box {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 420px; /* Aumentado para tamanho médio maior */
+    margin: 0 auto; /* Centraliza os boxes */
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 300px; /* Aumentado para altura maior das imagens */
+}
+
+.service-box h3 {
+    padding: 20px;
+    font-size: 18px;
+    color: rgb(34, 34, 34);
+}
+
+/* Efeito de "salto" ao passar o mouse */
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Diminui o espaçamento entre as colunas */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes no cabeçalho para dispositivos móveis */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header #title {
+        display: none; /* Esconde o título, a logo e o Instagram */
+    }
+
+    header nav ul {
+        flex-direction: row; /* Mantém o menu com as opções ao lado no mobile */
+        justify-content: center; /* Centraliza as opções */
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 10px; /* Dá espaçamento entre as opções */
+    }
+
+    /* Esconder logo, nome e Instagram no celular */
+    .eco-ig a {
+        display: none;
+    }
+
+    /* Ajustar a seção de serviços para dispositivos móveis */
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-box {
+        max-width: 90%; /* Ajusta o tamanho do box para telas médias */
+        margin: 0 auto; /* Centraliza */
+    }
+
+    .service-box img {
+        max-height: 250px; /* Ajusta a altura máxima das imagens em telas menores */
+    }
+
+    /* Centralizar títulos h2 para a versão móvel */
+    .main-container h2 {
+        font-size: 1.8rem;
+        text-align: center; /* Centraliza o título na versão móvel */
+    }
+
+    /* Diminui o tamanho das letras no menu em telas pequenas */
+    header nav ul li a {
+        font-size: 0.9rem; /* Reduz o tamanho das fontes */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para telas muito pequenas */
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-box {
+        max-width: 90%; /* Ajusta ainda mais para telas muito pequenas */
+    }
+
+    .service-box img {
+        max-height: 230px; /* Ajusta a altura máxima das imagens em telas muito pequenas */
+    }
+
+    header {
+        padding: 8px;
+    }
+
+    /* Diminui ainda mais o tamanho da fonte no menu em telas muito pequenas */
+    header nav ul li a {
+        font-size: 0.8rem; /* Reduz mais o tamanho da fonte para telas pequenas */
+    }
+}

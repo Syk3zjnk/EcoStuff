@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <!-- Carregando a fonte Poppins -->
+    <link rel="stylesheet" href="criarconta.css">
+</head>
+<body>
+
+    <!-- Menu fixo no topo -->
+    <nav class="navbar">
+        <div class="logo">
+            EcoStuff
+        </div>
+        <div class="social-link">
+            <!-- Adicionando o botão "Voltar" -->
+            <a href="https://eco-stuffhome.netlify.app/" class="back-btn">Voltar</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Criar Conta</h1>
+            <form action="#" method="POST" class="form">
+                <div class="input-group">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua senha" required>
+                </div>
+
+                <button type="submit">Criar Conta</button>
+            </form>
+
+            <!-- Mensagem abaixo do botão -->
+            <div class="info-text">
+                Junte-se à EcoStuff. Usuários cadastrados têm benefícios exclusivos em nossos serviços.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

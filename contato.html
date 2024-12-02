@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStuff - Contato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+    <header>
+        <div id="title">
+            <span class="eco-text">EcoStuff</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://eco-stuffhome.netlify.app/">Início</a></li>
+                <li><a href="file:///C:/Users/fabio/OneDrive/%C3%81rea%20de%20Trabalho/Isadora/servi%C3%A7os.html#">Serviços</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="file:///C:/Users/fabio/OneDrive/%C3%81rea%20de%20Trabalho/Isadora/criarconta.html">Ainda não tem uma conta?</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-container">
+        <h2>Entre em Contato Conosco!</h2>
+        <main class="content">
+            <div class="contact-form">
+                <form action="submit_form.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </main>
+    </section>
+
+    <footer>
+        <div class="eco-ig">
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

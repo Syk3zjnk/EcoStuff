@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos Gerais */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f0e6;  /* Cor de fundo bege claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;  /* Remove a barra de rolagem horizontal */
+}
+
+/* Menu fixo no topo */
+.navbar {
+    width: 100%;
+    background-color: rgb(34, 34, 34); /* Cor do menu igual ao botão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 30px; /* Ajustando o padding para mais espaço */
+    display: flex;
+    justify-content: space-between; /* Espaço entre logo e a imagem */
+    align-items: center;
+    z-index: 1000; /* Para garantir que o menu fique por cima do conteúdo */
+    box-sizing: border-box; /* Garantindo que o padding não afete a largura */
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Botão Voltar */
+.back-btn {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(34, 34, 34);  /* Cor igual ao botão principal */
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    background-color: #7FA653;  /* Cor do hover */
+}
+
+.back-btn:active {
+    background-color: #6a9544;  /* Cor ao clicar */
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin-top: 100px; /* Ajustando a margem para o conteúdo não ser coberto pelo menu fixo */
+}
+
+/* Formulário */
+.form-wrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(34, 34, 34);  /* Cor inicial do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7FA653;  /* Cor quando o mouse passa por cima */
+}
+
+button:active {
+    background-color: #6a9544;  /* Cor mais escura quando clicado */
+}
+
+/* Estilos da mensagem abaixo do botão */
+.info-text {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Responsividade: Ajuste para telas menores (tablet e celular) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+
+    .navbar .logo {
+        font-size: 1.5rem; /* Ajuste o tamanho da logo para telas menores */
+    }
+
+    /* Ajustes no formulário */
+    .form-wrapper {
+        padding: 20px;
+        max-width: 100%;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Diminui o tamanho do título em telas menores */
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+    .input-group input {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem; /* Reduz o tamanho do botão */
+    }
+}
+
+/* Responsividade: Ajuste para telas muito pequenas (celulares em modo retrato) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+
+    .navbar .logo {
+        font-size: 1.3rem; /* Menor tamanho de logo em telas muito pequenas */
+    }
+
+    .form-wrapper {
+        padding: 15px;
+        max-width: 100%;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Menor tamanho de título */
+    }
+
+    .input-group label {
+        font-size: 0.85rem;
+    }
+
+    .input-group input {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+    }
+}
