@@ -3,16 +3,16 @@
 
 /* Estilos Gerais */
 body {
-    background-color: rgb(245, 245, 220);
-    color: rgb(34, 34, 34);
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 15px;
+    padding: 0;
+    background-color: rgb(245, 245, 220);
+    color: rgb(34, 34, 34);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura total da tela */
-    flex-direction: column;
+    height: 100vh;
+    overflow-x: hidden; /* Evita a rolagem horizontal */
 }
 
 /* Cabeçalho */
@@ -22,134 +22,163 @@ header {
     align-items: center;
     background-color: rgb(34, 34, 34);
     color: white;
-    padding: 15px;
+    padding: 20px;
     position: fixed;
     top: 0;
     width: 100%;
-    left: 0;
-    right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header #title {
-    display: flex;
-    align-items: center;
-}
-
-header .eco-text {
     font-size: 2rem;
     font-weight: 600;
-    color: white;
 }
 
 header nav ul {
-    display: flex;
     list-style: none;
-    padding: 0;
-}
-
-header nav ul li {
-    margin: 0 20px;
+    display: flex;
+    gap: 20px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s, font-size 0.3s, background-color 0.3s;
 }
 
 header nav ul li a:hover {
     color: rgb(127, 166, 83);
 }
 
-/* Container Principal */
+/* Container principal para a seção de contato */
 .main-container {
-    width: 100%;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 150px;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha os itens no centro */
-    justify-content: center; /* Garante que o conteúdo fique no centro */
-}
-
-.main-container h2 {
-    font-size: 2.5rem;
-    color: rgb(34, 34, 34);
-    margin-top: 0;
-    text-align: center;
-    width: 100%;
-}
-
-/* Estilos do Formulário de Contato */
-.contact-form {
+    margin-top: 120px;  /* Deixando uma distância do cabeçalho */
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
+    background-color: #f5f5f5;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: rgb(34, 34, 34);
+    margin-bottom: 30px;
+}
+
+/* Estilos do formulário */
+.contact-form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Garantindo que o formulário ocupe 100% da largura disponível */
+    box-sizing: border-box; /* Inclui padding e borda nas dimensões */
 }
 
 .contact-form form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinha os itens do formulário no centro */
 }
 
 .form-group {
-    width: 100%;
     margin-bottom: 20px;
 }
 
 .form-group label {
     font-size: 1rem;
     color: rgb(34, 34, 34);
-    margin-bottom: 5px;
-    text-align: left;
+    margin-bottom: 8px;
+    display: block;
 }
 
 .form-group input, .form-group textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #fafafa;
+    box-sizing: border-box; /* Evita que o padding ultrapasse a largura do elemento */
 }
 
-.form-group textarea {
-    height: 150px;
+.form-group input:focus, .form-group textarea:focus {
+    border-color: rgb(127, 166, 83);
+    outline: none;
+}
+
+textarea {
     resize: none;
+    height: 150px;
 }
 
 button {
-    padding: 15px;
+    padding: 12px 20px;
     background-color: rgb(127, 166, 83);
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: rgb(102, 130, 64);
 }
 
-/* Estilo do Rodapé */
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .main-container {
+        margin-top: 100px; /* Ajuste a distância do topo no celular */
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-form {
+        width: 100%; /* Certificando-se de que o formulário tenha largura total */
+        padding: 20px; /* Reduzindo o padding para maior controle */
+    }
+
+    /* Esconde o nome EcoStuff */
+    #title {
+        display: none;
+    }
+
+    /* Ajusta o menu para exibir as opções ao lado */
+    header nav ul {
+        flex-direction: row; /* Exibe as opções do menu lado a lado */
+        gap: 10px; /* Ajusta o espaçamento entre os itens */
+    }
+
+    header nav ul li {
+        margin: 0; /* Remove qualquer margem que possa ter sido aplicada */
+    }
+
+    header nav ul li a {
+        font-size: 0.8rem; /* Diminui o tamanho da fonte */
+    }
+}
+
+/* Estilos do Rodapé */
 footer {
     background-color: rgb(34, 34, 34);
     color: white;
     text-align: center;
     padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer .eco-ig a {
-    color: white;
+    color: white;  /* Mudando a cor do link para branco */
     font-weight: 600;
     text-decoration: none;
     margin-left: 10px;
@@ -158,129 +187,5 @@ footer .eco-ig a {
 }
 
 footer .eco-ig a:hover {
-    color: rgb(127, 166, 83);
-}
-
-/* Estilo Responsivo para dispositivos móveis */
-@media (max-width: 768px) {
-    /* Ajuste do cabeçalho para dispositivos móveis */
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    header #title {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 10px;
-    }
-
-    header .eco-text {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-    }
-
-    header nav ul {
-        flex-direction: row; /* Alinha as opções de navegação horizontalmente */
-        align-items: center;
-        justify-content: center;
-        width: 100%; /* Garante que os itens ocupem toda a largura do cabeçalho */
-        margin-top: 10px;
-        padding-left: 0;
-    }
-
-    header nav ul li {
-        margin: 0 10px; /* Ajuste para que as opções fiquem mais próximas umas das outras */
-        font-size: 12px; /* Diminui o tamanho da fonte para a versão móvel */
-    }
-
-    /* Ajustes para o container principal */
-    .main-container {
-        width: 100%;
-        padding: 20px;
-        margin-top: 120px;
-    }
-
-    .main-container h2 {
-        font-size: 1.8rem;
-        text-align: left; /* Alinha o título à esquerda */
-        margin-left: 10px; /* Move um pouco mais para a esquerda */
-    }
-
-    .content {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .right-text {
-        font-size: 14px;
-    }
-
-    /* Esconder logo, nome e Instagram no celular */
-    header #title,
-    header .eco-text,
-    header img,
-    .eco-ig {
-        display: none;
-    }
-}
-
-/* Estilo Responsivo para dispositivos muito pequenos */
-@media (max-width: 480px) {
-    header .eco-text {
-        font-size: 1.5rem;
-    }
-
-    header nav ul {
-        padding-left: 0;
-    }
-
-    .main-container {
-        padding: 15px;
-    }
-
-    .main-container h2 {
-        font-size: 1.6rem;
-        margin-left: 10px; /* Mantém o título mais para a esquerda */
-    }
-
-    .right-text {
-        font-size: 12px;
-    }
-}
-
-/* Para dispositivos com telas grandes ou desktop (visível por padrão) */
-@media (min-width: 769px) {
-    /* Elementos do cabeçalho devem ser visíveis no desktop */
-    header #title,
-    header .eco-text,
-    header img,
-    .eco-ig {
-        display: flex;
-    }
-
-    /* Ajustar itens de navegação para desktop */
-    header nav ul {
-        flex-direction: row; /* Itens do menu lado a lado */
-        gap: 20px;
-    }
-
-    header nav ul li {
-        margin: 0 20px; /* Espaçamento maior entre os itens no desktop */
-        font-size: 16px; /* Tamanho de fonte maior para desktop */
-    }
-    .eco-ig a {
-        color: white;
-        font-weight: 600;
-        text-decoration: none;
-        margin-left: 10px;
-        font-family: 'Poppins', sans-serif;
-        transition: color 0.3s ease;
-    }
-    
-    .eco-ig a:hover {
-        color: rgb(127, 166, 83);
-    }
+    color: rgb(127, 166, 83);  /* Efeito de hover verde */
 }
