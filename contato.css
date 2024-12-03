@@ -271,4 +271,16 @@ footer .eco-ig a:hover {
         margin: 0 20px; /* Espaçamento maior entre os itens no desktop */
         font-size: 16px; /* Tamanho de fonte maior para desktop */
     }
+    .eco-ig a {
+        color: white;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: 10px;
+        font-family: 'Poppins', sans-serif;
+        transition: color 0.3s ease;
+    }
+    
+    .eco-ig a:hover {
+        color: rgb(127, 166, 83);
+    }
 }
